@@ -191,7 +191,66 @@ The Figure below shows the SMART Web Interface here we have to input the paired 
 
 ## Results and Analysis
 
+Assembly Results
+
+As first part of the experiment a comparative analysis is done using NovoPlasty,NORGAL, MitoBim and SMART.
+
+Assembly Results of Cinnamomum Verum
+
+<img src="data/cinom.jpeg" alt="cinomum" class="inline"/>
+
+For the Cinnamomum Verum dataset we used 4 different seeds for assembling in NovaPlasty tool. When we used Cinnamon Verum(A small part of the dataset to be assembled) as the seed there were no N50 contigs present in the output file and it took less than 5 minutes run time. This assembly used 6.02 4GB ram and only one CPU core and one thread ran by the tool. When we used Arabidopsis Thaliana as the seed there were 3 contigs and 1 N5O contig present in the output file. The assembling process took 19 minutes to finish. This process used 6.024 GB ram and only one CPU core and one thread ran by the tool.When we used Oryza sativa as the seed there were 1 contig of length 5428 is present in the output file. The assembling process took 3 minutes to finish. This process used 6.024 GB ram and only one CPU core and one thread ran by the tool.When we used the norgal output as the seed there were 3 contigs and 1 N5O contig present in the output file. The assembling process took 21 minutes to finish. This process used 1 GB ram and only one CPU core and one thread ran by the tool.
+
+When we assembled Cinnamomum Verum using Norgal tool, there were no N50 contig present on the output file. It tooks 376 minutes to finish and it used 1GB ram. It took 2CPU cores and ran 3 threads.
+
+When we assembled Cinnamomum Verum using SMART, we used Arabidopsis Thaliana as the seed and no N50 contigs present in the output file. It approximately took 60 minutes to finish. After we submitted the data to the web server to assemble and annotate it choose 16 threads to run.
+
+When we asembled Cinnamomum Verum using MitoBim tool, there was only one N50 contig present in the output. It took approximately 45 minutes and used 2GB of RAM. It took 2CPU core and used 4 threads.
+
+Assembly Results of Solanum Melongena
+
+
+<img src="data/solum.jpeg" alt="solnom" class="inline"/>
+
+For the Solanum Melongena dataset we used 4 different seeds for assembling in NovaPlasty tool. When we used Solanum Melongena (A small part of the dataset to be assembled) as the seed there were no N50 contigs present in the output file and it took 15 minutes run time. This assembly used 20 4GB ram and only one CPU core and one thread ran by the tool. When we used Arabidopsis Thaliana as the seed there were no contigs in the output but it had hits while the annotation process. The assembling process took 31 minutes to finish. This process used 12 GB ram and only one CPU core and one thread ran by the tool.When we used Oryza sativa as the seed there were 1 contig with no hits present in the output file. The assembling process took 18 minutes to finish. This process used 17.5 GB ram and only one CPU core and one thread ran by the tool. When we used the norgal output as the seed there were 3 contigs and 1 N5O contig present in the output file. The assembling process took 42 minutes to finish. This process used 12.5 GB ram and only one CPU core and on thread ran by the tool.
+
+When we assembled Solanum Melongena using Norgal tool, there were intermediate contigs present on the output file. It tooks 780 minutes to finish and it used 10GB ram. It took 2CPU cores and ran 3 threads.
+
+When we assembled Solanum Melongena using SMART, one N50 contig present in the output file. It approximately took 90 minutes to finish. After we submitted the data to the web server to assemble and annotate it choose 16 threads to run.
+
+When we asembled Solanum Melongena using MitoBim tool, there was only one N50 contig present in the output. It took approximately 68 minutes and used 2GB of RAM. It took 2CPU core and used 4 threads.
+
+Assembly Results of Homosapien Sapien
+
+<img src="data/homo.jpeg" alt="homo" class="inline"/>
+
+For the Homosapien Sapien dataset we used Pan troglodytes seed for assembling in NovaPlasty tool. We got Complete Circular genome in the output and it took 6 minutes to finish. It used 2GB ram and 1 core CPU and ran 1 thread.
+
+When we assembled Homosapien Sapien using Norgal tool, we got Complete Circular genome in the output and it took 50 minutes to finish. It used 1GB ram and 2 core CPUs and ran 3 threads.
+
+When we assembled Homosapien Sapien using SMART, we got Complete Circular genome in the output and it took 30 minutes to finish. After we submitted the data to the web server to assemble and annotate it choose 16 threads to run.
+
+When we asembled Homosapien Sapien using MitoBim tool, we got Complete Circular genome in the output and it took 8 minutes to finish. It used 2GB ram and 2 core CPUs and ran 4 threads.
+
+Assembly Results of Oncorhynchus mykiss
+
+<img src="data/mykiss.jpeg" alt="mykiss" class="inline"/>
+
+For the Oncorhynchus mykiss dataset we used T.thymallus COI sequence as seed for assembling in NovaPlasty tool. We got 1N50 contig in the output and it took 70 minutes to finish. It used 2.772GB ram and 1 core CPU and ran 1 thread.
+
+When we assembled Oncorhynchus mykiss using Norgal tool, there were no N50 contigs in the output and it took 1080 minutes to finish. It used 2.016GB ram and 2 core CPUs and ran 3 threads.
+
+When we assembled Oncorhynchus mykiss using SMART, there were no N50 contigs in the output and it took 90 minutes to finish. After we submitted the data to the web server to assemble and annotate it choose 16 threads to run.
+
+When we asembled Oncorhynchus mykiss using MitoBim tool, we got Complete Circular genome in the output and it took 80 minutes to finish. It used 2GB ram and 2 core CPUs and ran 4 threads.
+
+
 ## Conclusion
+
+Assembling a mitochondrial genome very accurately and efficiently for all kind of datasets is what everyone involved with genomics are looking forwards and this study also going in that way. We have assembled 4 type of dataset with four tools and analyzed it's performance and accuracy, from the results we obtained we can come to some conclusions on assembling mitochondrial genome. The conclusions we derived from the results can be divided into 3 scenarios which are Dataset based, Runtime based and Resource Requirement. From the 1st scenario we can conclude that all a good assembly needed is a good dataset, in the sense of dataset it means the seeds,reference genome and the size of the dataset. If the size is small the accuracy is much better.If the seeds are good enough we can get good acccurate and efficient assembly from NovoPlasty and SMART tools.But finding such seeds is a crucial task. The second scenario is the run time of the assembly , if there are neither reference genome nor seeds we can still assemble the dataset using Norgal but it consumes more time. As from these two scenarios a pipeline can be developed as shown in the below figure that in case if there are no good seeds we can use the Norgal assembly output of the same species as seed and it will give better assembly.
+
+<img src="data/Pipeline.JPG" alt="mykiss" class="inline"/>
+
 
 ## Publications
 1. [Semester 7 report](./)
