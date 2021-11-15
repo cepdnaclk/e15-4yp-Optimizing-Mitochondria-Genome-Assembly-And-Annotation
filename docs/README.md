@@ -14,12 +14,11 @@ title: Optimizing the procedure of mitochondrial genome assembly and annotation
 # Project Title
 
 #### Team
+- E/15/330, K.Sathurshan
+- E/15/366, S.Thinesh
+- E/15/373, R.Vaheesan
 
-- E/15/330, K.Sathurshan, [email](mailto:name@email.com)
-- E/15/366, S.Thinesh, [email](mailto:name@email.com)
-- E/15/373, R.Vaheesan, [email](mailto:name@email.com)
 #### Supervisors
-
 - Dr. Asitha Bandaranayake, [email](mailto:asithab@eng.pdn.ac.lk)
 - Prof. Pradeepa Bandaranayake, [email](mailto:pradeepag@agri.pdn.ac.lk)
 
@@ -31,8 +30,7 @@ title: Optimizing the procedure of mitochondrial genome assembly and annotation
 4. [Experiment Setup and Implementation](#experiment-setup-and-implementation)
 5. [Results and Analysis](#results-and-analysis)-
 6. [Conclusion](#conclusion)
-7. [Publications](#publications)
-8. [Links](#links)
+7. [Links](#links)
 
 ---
 
@@ -73,10 +71,10 @@ SMART claims that it provides better results than other tools like  Norgal, NOVO
 ## Methodology
 Design Overview
 
-This chapter covers how the work flow of the mitochondrial genome assembly optimization is planned. From the literature review we could find 
+This chapter covers how the work flow of the mitochondrial genome assembly optimization is planned. From the literature review we could find
 the tools that are dedicated for mitochondrial genome assembly. We then analyze the tools by reading and short listed some of them for experimental analysis.
-Genome assembly remains a challenging computational problem, the next-generation sequencing technologies which generate a greater amount of data and 
-make the assembly process more complex. There is a huge demand for a pipeline that will assemble a genome quickly and accurately. 
+Genome assembly remains a challenging computational problem, the next-generation sequencing technologies which generate a greater amount of data and
+make the assembly process more complex. There is a huge demand for a pipeline that will assemble a genome quickly and accurately.
 In this next-generation sequencing, the results are short reads, so we mainly focused on the tools that do short read assembly of mitochondria genome.
 
 Conceptual Design
@@ -118,10 +116,10 @@ Step 2 - Test the wrapper script by doing
     ~/PATH/TO/MITObim.pl
 
 
-Step 3 - Do the mapping assembly with MIRA 4. MIRA is a Sequence assembler and sequence mapping for whole genome shotgun and EST / RNASeq sequencing data. 
+Step 3 - Do the mapping assembly with MIRA 4. MIRA is a Sequence assembler and sequence mapping for whole genome shotgun and EST / RNASeq sequencing data.
 
 
-    ln -s /PATH/TO/testdata1/Tthymallus-150bp-300sd50-interleaved.fastq 
+    ln -s /PATH/TO/testdata1/Tthymallus-150bp-300sd50-interleaved.fastq
         reads.fastq
     ln -s /PATH/TO/testdata1/Salpinus-mt-genome-NC_000861.fasta reference.fa
 
@@ -129,7 +127,7 @@ Step 3 - Do the mapping assembly with MIRA 4. MIRA is a Sequence assembler and s
 Step 4 - Create the manifest file and specifying the parameters for the MIRA assembly
 
 
-    echo -e "\n#manifest file for basic mapping assembly with 
+    echo -e "\n#manifest file for basic mapping assembly with
         illumina data using  MIRA 4\n\nproject =  initial-mapping
         -testpool-to-Salpinus-mt\n\njob=genome,mapping,accurate\n\
         nparameters = -NW:mrnl=0 -AS:nop=1 SOLEXA_SETTINGS -CO:
@@ -156,8 +154,8 @@ Step 6 - Baiting and iterative mapping using the MITObim.pl script
 Step 7 - After the process has finished looking into the log file
 
     tail log
-    
-    
+
+
 Configure Norgal Tool
 
 Norgal uses kmer frequencies to try to assemble the mitochondrial genome from NGS sequencing reads (currently only Illumina paired end reads are supported). It requires Python2.7+ or Python3, Java and matplotlib. The size of our input data determines how much memory we'll use. Norgal has been tested on computers with 16GB, 32GB, and 64GB of RAM. In other words, if our reads are just a few GB each, it should work; but, if our reads are 12 GB each, and our machine only has 12 GB of RAM, it will almost certainly not work, and we'll have to run it on a node or anything similar. But in our case, we used Aiken and Agbc server both are 256GB RAM. So we did not address any issue during the assembly.
@@ -172,7 +170,7 @@ Step 2 - Execute the norgal.py script
     python norgal/norgal.py -h
 
 
-Step 3 - Run the paired end data(f.fq and r.fq) 
+Step 3 - Run the paired end data(f.fq and r.fq)
 
     python norgal.py -i f.fq r.fq -o norgal_output --blast
 
@@ -250,15 +248,6 @@ When we asembled Oncorhynchus mykiss using MitoBim tool, we got Complete Circula
 Assembling a mitochondrial genome very accurately and efficiently for all kind of datasets is what everyone involved with genomics are looking forwards and this study also going in that way. We have assembled 4 type of dataset with four tools and analyzed it's performance and accuracy, from the results we obtained we can come to some conclusions on assembling mitochondrial genome. The conclusions we derived from the results can be divided into 3 scenarios which are Dataset based, Runtime based and Resource Requirement. From the 1st scenario we can conclude that all a good assembly needed is a good dataset, in the sense of dataset it means the seeds,reference genome and the size of the dataset. If the size is small the accuracy is much better.If the seeds are good enough we can get good acccurate and efficient assembly from NovoPlasty and SMART tools.But finding such seeds is a crucial task. The second scenario is the run time of the assembly , if there are neither reference genome nor seeds we can still assemble the dataset using Norgal but it consumes more time. As from these two scenarios a pipeline can be developed as shown in the below figure that in case if there are no good seeds we can use the Norgal assembly output of the same species as seed and it will give better assembly.
 
 <img src="data/Pipeline.JPG" alt="mykiss" class="inline"/>
-
-
-## Publications
-1. [Semester 7 report](./)
-2. [Semester 7 slides](./)
-3. [Semester 8 report](./)
-4. [Semester 8 slides](./)
-5. Author 1, Author 2 and Author 3 "Research paper title" (2021). [PDF](./).
-
 
 ## Links
 
